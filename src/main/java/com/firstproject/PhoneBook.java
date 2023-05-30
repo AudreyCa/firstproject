@@ -13,6 +13,12 @@ public class PhoneBook {
         String userFirstName = getUserInput("Entrez un prenom: ");
         String userPhoneNumber = getUserInput("Entrez un numero de telephone: ");
 
+        // On veut créer un nouvel object à partir d'un constructeur dans le fichier (et la Class associée: ) "Contact.
+        // On crée donc une méthode qui permet, en Java, d'instancier (créer) des objets
+        Contact newContact = new Contact(userLastName, userFirstName, userPhoneNumber);
+        
+
+
         System.out.println(userLastName);
         System.out.println(userFirstName);
         System.out.println(userPhoneNumber);

@@ -1,0 +1,12 @@
+{
+    "java.externalDependencies": [
+        "junit:junit:jar:4.12:test", // Maven format
+        "junit:junit:4.12" // Gradle-style format is also allowed
+    ],
+    "java.classPath": [
+        "lib/some-dependency.jar"
+    ],
+    "java.docPath": [
+        "lib/some-dependency-sources.jar"
+    ]
+}

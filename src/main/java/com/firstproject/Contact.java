@@ -20,6 +20,11 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return this.lastName+ " " +this.firstName+ " " +this.phoneNumber;
+    }
+
     // Les Getter et Setter des attributs ci-dessus :
     /*
      * public String getLastName() {

@@ -24,8 +24,6 @@ public class PhoneBook {
         // On crée donc une méthode qui permet, en Java, d'instancier (créer) des objets
         Contact newContact = new Contact(userLastName, userFirstName, userPhoneNumber);
 
-        System.out.println(newContact.toString());
-
         File phoneBookFile = getOrCreatePhoneBookFile(PHONE_BOOK_FILE_PATH);
         appendContactToPhoneBook(phoneBookFile, newContact);
 
@@ -85,15 +83,16 @@ public class PhoneBook {
         // }
 
         // Factorisation d'un try/catch :
-        try (BufferedWriter fileWriter = new BufferedWriter(new
-        FileWriter(phoneBookFile, true))) {
+        try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter(phoneBookFile, true))) {
 
-        fileWriter.append(newContact.toString() + '\n');
+        fileWriter.append(newContact.toString());
+        fileWriter.append(System.lineSeparator());  // lineSeparator, mieux que le '\n' pour s'adapter à plus de systeme
+
         System.out.println("Contact ajoute");
         // fileWriter.close(); // plus besoin de close quand on le met dans le "try". Ca close automatiquement
 
         } catch (IOException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
 
     }
